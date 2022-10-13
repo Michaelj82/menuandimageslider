@@ -1,3 +1,8 @@
+:root{
+    --paddingadjust: 10px;
+    --widthadjust:70px;
+}
+
 html,body{
     height: 100vh;
     width: 100vw;
@@ -21,7 +26,7 @@ html,body{
     left: -200px;
 
 
-    z-index: 2;
+    z-index: 3;
 
 
     transition: transform 300ms ease-in-out;
@@ -42,10 +47,72 @@ html,body{
 
 }
 
+
+#imageslider{
+    border: solid;
+    grid-row-start: 2;
+    grid-column-start: 2;
+
+    grid-row-end: 5;
+    grid-column-end: 5;
+}
+
+
+
+
+
+
+#content > #menubutton{
+    position: fixed;
+    z-index: 2;
+    left: 15px;
+    top: 15px;
+    
+}
+
 #content > #header{
     border: solid;
     grid-area: span 1 / span 5;
     grid-column-start: 0;
     grid-row-start: 0;
+    
+    
 
+
+}
+
+#header > ul{
+    height: 100%;
+
+    display: flex;
+    
+    justify-content: space-around;
+    align-items: center;
+}
+
+#header > ul > li{
+    display: inline;
+    background-color: aqua;
+    width: var(--widthadjust);
+    padding: var(--paddingadjust);
+
+}
+
+#header > ul > li:hover .dropdowncontent{
+    transform: translate(calc(var(--paddingadjust) * -1), 0);
+    min-width: var(--widthadjust);
+    margin-top: var(--paddingadjust);
+    position:absolute;
+    border: solid;
+}
+#header > ul > li:hover .disabled{
+    display: block;
+    background-color: grey;
+
+}
+
+
+
+.disabled{
+    display: none;
 }
